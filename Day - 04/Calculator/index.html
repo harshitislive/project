@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="main">
+            <h1 id="result"></h1>
+            <div id="buttons">
+                <button onclick="handleClick(7)">7</button>
+                <button onclick="handleClick(8)">8</button>
+                <button onclick="handleClick(9)">9</button>
+                <button onclick="handleClick('+')">+</button>
+
+                <br>
+                <button onclick="handleClick(4)">4</button>
+                <button onclick="handleClick(5)">5</button>
+                <button onclick="handleClick(6)">6</button>
+                <button onclick="handleClick('-')">-</button>   
+                
+                <br>
+                <button onclick="handleClick(1)">1</button>
+                <button onclick="handleClick(2)">2</button>
+                <button onclick="handleClick(3)">3</button>
+                <button onclick="handleClick('*')">*</button>
+
+                <br>
+                <button class="wid" onclick="handleClick('0')">0</button>  
+                <button onclick="handleClick('.')">.</button>  
+                <button onclick="handleClick('/')">/</button>  
+
+                <br>
+                <button class="wid" onclick="handleClick('=')">=</button>  
+                <button onclick="handleClick('⇦')">⇦</button>  
+                <button onclick="handleClick('ac')">AC</button>  
+            </div>
+        </div>
+
+        <script>
+            result = document.getElementById('result');
+            function handleClick (data) {
+                if(data == 'ac'){
+                    result.innerHTML = "";
+                }
+                else if (data == '⇦'){
+                    result.innerHTML = result.innerHTML.slice(0, -1);
+                }
+                else if (data == '='){
+                    if(result.innerHTML != ""){
+                        result.innerHTML = eval(result.innerHTML);
+                    }
+                }
+                else if(data == '-' || data == '+' || data == '*'|| data == '/'|| data == '.'){
+                    let lastChar = result.innerHTML.at(-1);
+                    if(lastChar != '-' || lastChar != '+' || lastChar != '*'|| lastChar != '/'|| lastChar != '.'){
+                        result.innerHTML += data;
+                    }
+                }
+                else{
+                    result.innerHTML += data;
+                }
+            }
+        </script>
+    </body>
+</html>
