@@ -38,9 +38,6 @@
             color: white;
             border: none;
         }
-        #qrcode {
-            margin: 20px auto;
-        }
     </style>
 </head>
 <body>
@@ -61,6 +58,7 @@
 
         function generate () {
             qrcode.innerHTML = "";
+            qrcode.style.margin = "20px auto";
             let data = `upi://pay?pa=${upi.value}&am=${amount.value}`;
             new QRCode(qrcode, { text: data, width: 200, height: 200 });
         }
