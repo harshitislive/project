@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="input">
+            <input id="upi" type="text" placeholder="UPI Id">
+            <input id="amount" type="number" placeholder="Amount">
+            <button id="button" onclick="generate()">Pay Now</button>
+        </div>
+        <div id="qrcode">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        const upi = document.getElementById("upi");
+        const amount = document.getElementById("amount");
+        let qrcode = document.getElementById("qrcode");
+
+        function generate () {
+            qrcode.innerHTML = "";
+            let data = `upi://pay?pa=${upi.value}&am=${amount.value}`;
+            new QRCode(qrcode, { text: data, width: 200, height: 200 });
+        }
+    </script>
+</body>
+</html>
