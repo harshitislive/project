@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: burlywood;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+}
+
+#main{
+    background-color: wheat;
+    width: 350px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+#input * {
+    padding: 8px;
+    font-size: 15px;
+}
+
+#btn {
+    background-color: greenyellow;
+}
+
+#clock{
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+#timer {
+    background-color:pink;
+    padding: 10px;
+    font-size: 80px;
+    border-radius: 10px;
+}
