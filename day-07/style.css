@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: rgb(222, 166, 110);
+    height: 100vh;
+    width: 100wh;
+    display: grid;
+    place-content: center;
+}
+
+#main {
+    background-color: #fff;
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+#main h2 {
+    margin: 20px;
+}
+
+#inputbox * {
+    padding: 8px;
+    font-size: 15px;
+}
+
+#inputbox input {
+    width: 250px;
+}
+
+#inputbox button {
+    background-color: peru;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 10px 5px;
+    text-align: left;
+    background-color: rgb(246, 190, 135);
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+ul li button {
+    background-color: rgb(246, 190, 135);
+    border: none;
+}
+
+
+
