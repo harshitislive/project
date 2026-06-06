@@ -1,0 +1,77 @@
+<html>
+    <head><title>Show Card</title></head>
+    <link rel="stylesheet" href="style.css">
+
+    <body>       
+
+        <div id="main">
+
+            <div id="result">
+                <h1 id="score">Score: 0</h1>
+                <button id="startbtn" onclick="start()">Start</button>
+            </div>
+            
+            <div id="allbox">
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+                <div class="box" onclick="show(this)">0</div>
+            </div>
+            
+            <p id="msg">Click Cards, You can reveal only 4 Cards    </p>
+        </div>
+        
+
+
+        <script>
+            let boxes = document.getElementsByClassName('box');
+            let score = document.getElementById('score');
+            let startbtn = document.getElementById('startbtn');
+            let totalScore = 0;
+            let attempts = 0;
+
+            function start() {
+                document.getElementById('allbox').style.display = "block";
+                document.getElementById('msg').style.display = "block";
+                totalScore = 0;
+                attempts = 0;
+                score.innerHTML = "Score: " + totalScore;
+                for (let i = 0; i< boxes.length; i++){
+                    boxes[i].innerHTML = getRandomInt(1,99);
+                    boxes[i].style.color = "crimson";
+                }
+            }
+
+            function show (elem) {
+                if(attempts >= 4) {
+                    alert("Restart the game");
+                    startbtn.innerHTML = "Restart";
+                    return;
+                }
+                attempts++;
+                elem.style.color = "white";
+                totalScore +=  parseInt(elem.innerHTML, 10);
+                score.innerHTML = "Score: " +  totalScore;
+            }
+
+
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+        </script>
+
+
+    </body>
+
+</html>
