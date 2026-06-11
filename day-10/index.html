@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        #main{
+            background-color: white;
+            text-align: center;
+            background: white;
+        }
+        #main h1 {
+            background: linear-gradient(to right, #e52d27,#b31217);
+            padding: 10px;
+            color: white;
+        }
+        #main iframe{
+            margin: 10px;
+            width: 800px;
+            height: 450px;
+            border: 2px solid red;
+            border-radius: 10px;
+            
+        }
+        #control *{
+            padding: 10px;
+        }
+        #control input{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <h1>My Free Player</h1>
+        <iframe id="frame"  src="https://www.youtube.com/embed/kTXrmIIB1sU" allowfullscreen autoplay></iframe>
+
+        <div id="control">
+            <input id="linktext" placeholder="Enter your Link.." type="text">
+            <button id="playbtn" onclick="change()">Search</button>
+            <br> <br>
+            <button id="sharebtn" onclick="share()">Share on Whatsapp</button>
+        </div>
+    </div>
+    
+    <script>
+        const queryString = window.location.search; 
+        const currentURL = window.location.href;
+        const urlParams = new URLSearchParams(queryString);
+
+        let frame = document.getElementById('frame');
+        let linktext = document.getElementById('linktext');
+
+        let videoId = urlParams.get('v');
+        if(videoId.length >= 10) {
+             frame.src = "https://www.youtube.com/embed/" + videoId;
+        }
+
+
+        function change () {
+            let link = linktext.value;
+            if(link.length != 48){
+                alert("Invalid Video Link");
+                linktext.value = "";
+                return;
+            }
+            videoId = link.slice(17,28);
+            frame.src = "https://www.youtube.com/embed/" + videoId;
+            linktext.value = "";
+            
+            const url = new URL(currentURL);
+            if(urlParams.get('v') != "") {
+                
+            }
+            url.searchParams.delete('v');
+            url.searchParams.set('v', videoId);
+            window.history.replaceState(null, '', url);
+        }
+
+        function share () {
+            if(videoId === ""){
+                alert("No Video to share - Please input some link");
+                return;
+            }
+            window.location = 'https://wa.me/?text=Play Ad-Free Video: ' + encodeURI(currentURL);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolly Jokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h2>Jolly Jokes</h2>
+
+        <p id="setup">Setup</p>
+        <p id="punchline">Punch Line Loading...</p>
+
+        <button onclick="load()">Next</button>
+    </div>
+
+
+    <script>
+        async function load () {
+            const res = await fetch('http://www.official-joke-api.appspot.com/random_joke');
+            const joke = await res.json();
+            // console.log(joke);
+
+            document.getElementById('setup').innerText = joke.setup;
+            document.getElementById('punchline').innerText = joke.punchline;
+        }
+
+        load();
+    </script>
+</body>
+</html>

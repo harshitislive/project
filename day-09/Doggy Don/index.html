@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <div id="main">
+        <img id="image" alt="Dogesh BHai">
+        <button onclick="load()">Next</button>
+    </div>
+
+    <script>
+
+        async function load () {
+            const res = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await res.json();
+            document.getElementById('image').src = data.message;
+        }
+        
+        load ();
+    </script>
+</body>
+</html>
