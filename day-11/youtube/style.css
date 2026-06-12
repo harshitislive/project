@@ -1,0 +1,114 @@
+
+:root {
+/* Brand */
+--color-primary: #A12ABF;
+--color-primary-dark: #8B24A6;
+--color-primary-light: #D96EFF;
+--color-primary-hover: #B83AD8;
+
+/* Backgrounds */
+--color-background: #0D0D12;
+--color-surface: #171720;
+--color-card: #20202D;
+--color-elevated: #2B2B3D;
+
+/* Text */
+--color-text: #FFFFFF;
+--color-text-secondary: #C9C9D4;
+--color-text-muted: #8D8D9B;
+
+/* Status */
+--color-success: #22C55E;
+--color-warning: #F59E0B;
+--color-danger: #EF4444;
+--color-info: #3B82F6;
+
+/* Effects */
+--shadow-primary: 0 0 30px rgba(161, 42, 191, 0.35);
+
+/* Gradient */
+--gradient-primary: linear-gradient(
+135deg,
+#8B24A6 0%,
+#A12ABF 50%,
+#D96EFF 100%
+);
+}
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.container {
+    background-color: var(--color-elevated);
+    height: 100%;
+}
+.navbar {
+    height: 80px;
+    width: 100vw;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-elevated);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+}
+.fa-youtube {
+    color: var(--color-primary);
+    font-size: 60px;
+    cursor: pointer;
+}
+.fa-magnifying-glass {
+    color: var(--color-text);
+    font-size: 25px;
+    cursor: pointer;
+    margin-bottom: -5px;
+}
+
+.fa-share {
+    color: var(--color-primary);
+    font-size: 40px;
+    cursor: pointer;
+}
+.searchbar{
+    background-color: var(--color-text-muted);
+    border-radius: 10px;
+    padding: 10px;
+    justify-self: center;
+}
+.navbar .searchbar input {
+    font-size: 20px;
+    width: 300px;
+    outline: none;
+    border: none;
+    background-color: var(--color-text-muted);
+}
+
+.videobar{
+    background-color: var(--color-elevated);
+    display: flex;
+    align-items: center;
+    height: 80%;
+    justify-content: center;
+    padding: 20px;
+}
+.videobar iframe {
+    border-radius: 10px;
+    border: none;
+    width: 800px;
+    height: 450px;
+}
