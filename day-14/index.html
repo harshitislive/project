@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div id="welcome">
+            <h1>Data Structures</h1>
+            <h3>3 Questions</h3>
+            <button onclick="start()">Start Quiz</button>
+        </div>
+
+        <div id="quiz">
+
+            <div id="q1">
+                <h3>(1) <span id="qs1">Which is non linear DSA?</span></h3>
+                <div id="options">
+                    <p>(a) <span id="op1">Array</span></p>
+                    <p>(b) <span id="op2">Stack</span></p>
+                    <p>(c) <span id="op3">Tree</span></p>
+                    <p>(d) <span id="op4">Queue</span></p>
+                </div>
+                <div class="control">
+                    <button onclick="prev(1)">Prev</button>
+                    <button onclick="next(1)">Next</button>
+                </div>
+            </div>
+            
+            <div id="q2">
+                <h3>(2) <span id="qs2">Which is fruit ?</span></h3>
+                <div id="options">
+                    <p>(a) <span id="op1">Guava</span></p>
+                    <p>(b) <span id="op2">Potato</span></p>
+                    <p>(c) <span id="op3">Tomato</span></p>
+                    <p>(d) <span id="op4">Onion</span></p>
+                </div>
+                <div class="control">
+                    <button onclick="prev(1)">Prev</button>
+                    <button onclick="next(1)">Next</button>
+                </div>
+            </div>
+            
+            <div id="q3">
+                <h3>(3) <span id="qs3">Which is Bird ?</span></h3>
+                <div id="options">
+                    <p>(a) <span id="op1">Peakcock</span></p>
+                    <p>(b) <span id="op2">Dog</span></p>
+                    <p>(c) <span id="op3">Cow</span></p>
+                    <p>(d) <span id="op4">Cat</span></p>
+                </div>
+                <div class="control">
+                    <button onclick="prev(1)">Prev</button>
+                    <button onclick="next(1)">Next</button>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script>
+        let currentQ = 1;
+
+        function start() {
+            document.getElementById("quiz").style.display = "block";
+            document.getElementById("welcome").style.display = "none";
+        }
+
+        function next (){
+            if(currentQ == 3){
+                alert("You are already at last Question.");
+                return;
+            }
+            document.getElementById("q"+currentQ).style.display = "none";
+            currentQ++;
+            document.getElementById("q"+currentQ).style.display = "block";
+        }
+        function prev (){
+            if(currentQ == 1){
+                document.getElementById("welcome").style.display = "block";
+                document.getElementById("quiz").style.display = "none";
+                return;
+            }
+            document.getElementById("q"+currentQ).style.display = "none";
+            currentQ--;
+            document.getElementById("q"+currentQ).style.display = "block";
+        }
+    </script>
+</body>
+</html>

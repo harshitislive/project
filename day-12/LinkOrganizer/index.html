@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=`, initial-scale=1.0">
+        <title>Modal</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <div class="main">
+
+            <button id="addbtn" onclick="openWindow()">Add Link</button>
+            <div id="links">
+                <a href="https://google.com" target="_blank">Demo Google Link</a>
+            </div>
+            <div id="box">
+                <button id="closebtn" onclick="closeWindow()">X</button>
+                <div class="addlink">
+                    <input type="text" id="title" placeholder="Enter Your Title...">
+                    <input type="text" id="url" placeholder="Enter Your URL...">
+                    <button onclick="addNote()">Add Link</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            let title = document.getElementById('title');
+            let url = document.getElementById('url');
+            let links = document.getElementById('links');
+
+            function openWindow(){
+                document.getElementById('box').style.display = 'block';
+                document.getElementById('links').style.display = 'none';
+            }
+            function closeWindow(){
+                document.getElementById('box').style.display = 'none';
+                document.getElementById('links').style.display = 'block';
+            }
+
+            function addNote() {
+                let a = document.createElement('a');
+
+                a.setAttribute('target', '_blank');
+                a.setAttribute('href', url.value);
+                a.innerHTML = title.value;
+
+                links.appendChild(a);
+                closeWindow();
+
+                url.value = "";
+                title.value = "";
+            }
+        </script>
+    </body>
+    </html>

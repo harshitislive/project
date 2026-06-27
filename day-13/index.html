@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1645109bb2.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <div class="sidebar">
+            <img src="logo.png" width="150px" alt="">
+
+            <div class="buttons">
+                <button onclick="change(1,this)"> <i class="fa-solid fa-house"></i> Home</button>
+                <button onclick="change(2,this)"> <i class="fa-solid fa-video"></i> Classes</button>
+                <button onclick="change(3,this)"> <i class="fa-solid fa-lightbulb"></i> Quiz</button>
+                <button onclick="change(4,this)"> <i class="fa-solid fa-message"></i> AI Chat</button>
+                <button onclick="change(5,this)"> <i class="fa-solid fa-user"></i> Profile</button>
+            </div>
+
+        </div>
+        
+        <div class="screens">
+            <div id="screen1">Home</div>
+            <div id="screen2">Classes</div>
+            <div id="screen3">Quiz</div>
+            <div id="screen4">AI Chat</div>
+            <div id="screen5">Profile</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        function change (num, btn) {
+            for(let i = 1; i < 6; i++) {
+                document.getElementById('screen'+i).style.display = 'none';
+            }
+            document.getElementById('screen'+num).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
