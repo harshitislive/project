@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxFord Publc School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h2>OX FORD <br> <span>PUBLIC SCHOOL</span> </h2>
+            </div>
+
+            <nav id="nav" >
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+            </nav>
+            <button id="menu" onclick="showhide()">MENU</button>
+        </header>
+
+        <section id="hero">
+            <div class="admission">
+                <h1>ADMISSION OPEN <br>FOR SESSION 2026-27 </h1>
+            </div>
+        </section>
+
+        <section id="peoples"></section>
+
+        <section class="strength"></section>
+
+        <footer></footer>
+    </div>
+
+    <script>
+        let nav = document.getElementById("nav");
+        let hidden = true;
+
+        function showhide(){
+            if(hidden){
+                nav.style.display = "flex";
+                hidden = false;
+            }
+            else{
+                nav.style.display = "none";
+                hidden = true;
+            }
+        }
+    </script>
+</body>
+</html>

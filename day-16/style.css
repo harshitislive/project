@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: bisque;
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+header img {
+    height: 80%;
+}
+
+header nav a{
+    margin: 0px 10px;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+header nav a:hover{
+    background-color: rgb(57, 57, 57);
+    color: aqua;
+}
+
+.main {
+    display: grid;
+    place-content: center;
+    height: 400px;
+    background: url('banner.png');
+    background-size: cover;
+    background-position: start;
+}
+#maintbtn{
+    background-color: black;
+    padding: 20px 30px;
+    font-size: 30px;
+    text-decoration: none;
+    color: bisque;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+#maintbtn:hover{
+    background-color: bisque;
+    border: 1px solid black;
+    color: purple;
+    font-size: 32px;
+}
+
+section{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+section .card {
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+section .card:hover{
+    background-color: yellow;
+    transform: scale(0.95);
+}
+
+section .card img {
+    width: 250px;
+    border-radius: 100%;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+#menu{
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    section{
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav{
+        display: none;
+    }
+    #menu{
+        display: block;
+    }
+}
